@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\QuebecIncidents;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class QuebecIncidentsServiceProvider extends PackageServiceProvider
+class QuebecIncidentsServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-quebec-incidents';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-quebec-incidents')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
